@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Acentic Weather Application</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>  
+    <link href="css/oocss-master/core/libraries.css" type="text/css" rel="Stylesheet" />
+    <link href="css/oocss-master/core/content.css" type="text/css" rel="Stylesheet" />
+    <link href="css/style.css" type="text/css" rel="Stylesheet" />
+</head>
+<body>
+    <div id="pageContainer">
+        <nav id="navigation">
+            <img id="leftNav" src="resources/direction/arrow_left.png" />
+            <img id="rightNav" src="resources/direction/arrow_right.png" />
+            <img id="hoverNav" src="resources/direction/arrow_up.png" />
+            <ul id="cityScroller">
+            </ul>
+        </nav>
+        <section id="forecast">
+            <table>
+                <thead>
+                    <th>
+                        Fri
+                    </th>
+                    <th>
+                        Sat
+                    </th>
+                    <th>
+                        Sun
+                    </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            19C
+                        </td>
+                        <td>
+                            18C
+                        </td>
+                        <td>
+                            20C
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            66F
+                        </td>
+                        <td>
+                            64F
+                        </td>
+                        <td>
+                            66F
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="resources/weathericon/11.png" />
+                        </td>
+                        <td>
+                            <img src="resources/weathericon/11.png" />
+                        </td>
+                        <td>
+                            <img src="resources/weathericon/11.png" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            8C
+                        </td>
+                        <td>
+                            7C
+                        </td>
+                        <td>
+                            8C
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            46F
+                        </td>
+                        <td>
+                            45F
+                        </td>
+                        <td>
+                            47F
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <script src="js/jquery-1.8.2.js" type="text/javascript"></script>
+    <script src="js/app/weatherCenter.js" type="text/javascript"></script>
+    <script src="data/WeatherLocations.js" type="text/javascript"></script>
+    <script src="data/Weather.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            debugger;
+            var landingCity = 1;
+            // Change to false if startup should land on city with weather
+            var landingCityIsNotImportantToMe = true;
+            var forecast;
+            var params = {
+                rightScroll: "#rightNav"
+            }
+            var weatherCenter = new Acentic.WeatherCenter(params);
+            weatherCenter.SetupCityScroller($(weatherCenter.Hook));
+            weatherCenter.MoveScrollerPointerTo(landingCity);
+            if (!weatherCenter.HasWeather(landingCity) && landingCityIsNotImportantToMe) {
+                $(params.rightScroll).trigger("click");
+            }
+            else {
+                forecast = weatherCenter.GetForecastFor(weatherCenter.GetSelectedCityCode());
+                weatherCenter.DisplayForecast({
+                    forecast: forecast
+                });
+            }
+        });    
+    </script>
+</body>
+</html>
+ 

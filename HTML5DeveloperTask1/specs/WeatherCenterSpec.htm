@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="Stylesheet" href="../css/qunit-1.11.0.css" type="text/javascript" />
+    <link rel="Stylesheet" href="../css/style.css" type="text/javascript" />
+</head>
+<body>    
+    <div id="qunit"></div>
+    <div id="qunit-fixture">
+    </div>
+    <nav id="navigation">
+        <img id="leftNav" src="../resources/direction/arrow_left.png" />
+        <img id="rightNav" src="../resources/direction/arrow_right.png" />
+        <img id="hoverNav" src="../resources/direction/arrow_up.png" />
+        <ul id="cityScroller">
+            <li>
+                <a href="#"><span>Washington</span></a>
+            </li>
+            <li>
+                <a href="#"><span>Philadelphia</span></a>
+            </li>
+            <li>
+                <a href="#"><span>Amsterdam</span></a>
+            </li>
+        </ul>
+    </nav>
+    <section id="forecast">
+        <table>
+            <thead>
+                <th>
+                    Fri
+                </th>
+                <th>
+                    Sat
+                </th>
+                <th>
+                    Sun
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        19C
+                    </td>
+                    <td>
+                        18C
+                    </td>
+                    <td>
+                        20C
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        66F
+                    </td>
+                    <td>
+                        64F
+                    </td>
+                    <td>
+                        66F
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="resources/weathericon/11.png" />
+                    </td>
+                    <td>
+                        <img src="resources/weathericon/11.png" />
+                    </td>
+                    <td>
+                        <img src="resources/weathericon/11.png" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        8C
+                    </td>
+                    <td>
+                        7C
+                    </td>
+                    <td>
+                        8C
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        46F
+                    </td>
+                    <td>
+                        45F
+                    </td>
+                    <td>
+                        47F
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <script src="../js/jquery-1.8.2.js" language="javascript" type="text/javascript"></script>
+    <script src="../js/qunit-1.11.0.js" language="javascript" type="text/javascript"></script>
+    <script src="../js/app/WeatherCenter.js" language="javascript" type="text/javascript"></script>
+    <script src="../data/WeatherLocations.js" language="javascript" type="text/javascript"></script>
+    <script src="../data/Weather.js" language="javascript" type="text/javascript"></script>
+    <script src="../tests/WeatherCenterTests.js" language="javascript" type="text/javascript"></script>
+</body>
+</html>
